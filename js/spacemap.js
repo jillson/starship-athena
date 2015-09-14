@@ -1,4 +1,8 @@
 var ships = [{x:0,y:0},{x:30,y:30},{x:-30,y:30},{x:-60,y:-120}];
+var icons = {"ship":L.icon({iconUrl: 'img/ship.png', iconSize:[32,32]}),
+	     "anomaly":L.icon({iconUrl: 'img/anomaly.png', iconSize:[32,32]}),
+	     "base":L.icon({iconUrl: 'img/spacebase.png', iconSize:[32,32]})}
+var mapping = {1:"ship",2:"anomaly",3:"ship",0:"base"}
 var shipIcons = [];
 var target = null;
 var infodiv = $("#info");
@@ -31,9 +35,9 @@ function updateShips()
 
       
 var map = L.map('map').setView([0, 0], 2);
-L.tileLayer('spacetiles/{z}/{x}/{y}.png', {
+L.tileLayer('carleton/{z}/{x}/{y}.png', {
     minZoom: 1,
-    maxZoom: 4,
+    maxZoom: 6,
     attribution: 'ESO/INAF-VST/OmegaCAM',
     //continuousWorld: true,
     noWrap: true,
@@ -50,7 +54,8 @@ function createShipIcons()
     for (var ind in ships)
     {
         var ship = ships[ind];
-	var icon = L.marker([ship.x,ship.y]);
+	var tIcon = icons[mapping[ind]];
+	var icon = L.marker([ship.x,ship.y],{icon: tIcon});
 	icon.addTo(map).on("click",clickTarget);
         shipIcons.push(icon);
 	
