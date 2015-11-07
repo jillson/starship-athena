@@ -1,21 +1,42 @@
 rescale map for more scaling
 Different icons
 add map grids
-
+link ships and icons better
 icons rotate
 add stations
-weapon range circles
+make scanning fuller
+embed additional information
+basic navigation
+
+
+per station action buttons
+
+basic weapons
+  auto-fire phaser
+  missiles
+  remove destroyed ship
+  weapon range circles
+
+link with node
+
+make navigation fuller
+  Fix rotation
+  allow setting waypoints
+  allow intercept
+  allow docking
+
+
+
+
+
 
 prevent panning outside
 
-link ships and icons better
-embed additional information
-per station action buttons
-link with node
+
+
 handle add/remove detected ships
-make navigation fuller
+
 make combat fuller
-make scanning fuller
 make comms (? does comms use this UI?)
 ai
 scenarios
